@@ -1,0 +1,213 @@
+/******************************************
+/* CSS
+/*******************************************/
+
+@font-face {
+  font-family: 'Hylia Serif Beta';
+  src: url('HyliaSerifBeta-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BOTW Hylian';
+  src: url('BOTW-Hylian.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+body {
+  background-color: rgb(206, 235, 234);
+  color: rgb(48, 102, 112);
+  margin:auto;
+  width:1000px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* Box Model Hack */
+*{
+  box-sizing: border-box;
+}
+
+/******************************************
+/* LAYOUT
+/*******************************************/
+
+
+.hidden {
+  display:none;
+}
+
+.searchBar {
+  display:flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items:center;
+
+}
+
+.searchBar > * {
+  width:300px;
+  margin:auto;
+}
+
+.buttons {
+  display:flex;
+  justify-content:center;
+  
+}
+
+h1 {
+  margin-bottom:30px;
+  
+}
+
+h1 + h2 {
+  width: 400px;
+  margin:auto;
+  text-align:center;
+  margin-bottom:30px;
+  
+}
+
+div#monster {
+  width:570px;
+  margin:auto;
+  background-color:rgb(26, 42, 59);
+  padding:15px;
+  margin-top:10px;
+  height:420px;
+}
+
+div#background {
+  width:570px;
+  margin:auto;
+  background-color:rgb(26, 42, 59);
+  padding:15px;
+  margin-top:50px;
+  height:420px;
+}
+
+#monster img {
+  width:150px;
+  float:right;
+  margin:10px;
+  border-radius:20px;
+}
+
+img.overlay {
+  width:1000px;
+  position:absolute;
+}
+
+div.overlay {
+  margin:auto;
+  width:1000px;
+}
+
+h2.name {
+  margin-left:40px;
+}
+
+
+/******************************************
+/* ADDITIONAL STYLES
+/*******************************************/
+
+h1 {
+  color: rgb(251, 249, 231);
+  text-align:center;
+  font-family: 'Hylia Serif Beta';
+  font-size:90px;
+  font-weight:normal;
+  text-shadow: rgba(177, 130, 116, 0.427) 1px 0 10px;
+}
+
+h2 {
+  
+  font-family: 'Hylia Serif Beta';
+}
+
+.name {
+  font-size: 35px;
+}
+
+button {
+  background-color:rgb(251, 249, 231);
+  border-radius: 10px;
+  height:40px;
+  border: 0;
+  margin:10px;
+  color: rgb(48, 102, 112);
+  padding: 10px 10px;
+}
+
+input {
+  border:none;
+  height:30px;
+  border-radius: 5px;
+}
+
+.sheikah {
+  font-family:'BOTW Hylian';
+  color:rgb(115, 233, 251);
+  text-shadow: rgb(115, 233, 251) 1px 0 10px;
+  z-index:-1;
+  display: flex;
+  flex-direction:column;
+  overflow:hidden;
+  width:inherit;
+  height:400px;
+  
+  text-align:center;
+  animation: primary 20s linear infinite;
+}
+
+#sheikahOne {
+  line-height:40px;
+  margin-bottom:60px;
+}
+
+#sheikahTwo {
+  margin-bottom: 30px;
+  line-height:30px;
+}
+
+@keyframes primary {
+  from {
+    left: 0%;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes secondary {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+
+
+
+
+  
+
+
+
+
+/*blue rgb(151, 199, 217)
+dark blue rgb(48, 102, 112)
+cream rgb(249, 244, 205)
+green rgb(159, 192, 132)
+brown rgb(108, 95, 50)
+
+search bar
+
+rgb(115, 233, 251)
