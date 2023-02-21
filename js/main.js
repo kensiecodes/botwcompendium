@@ -1,3 +1,14 @@
+//parent object search
+//load the api info
+//populate the page
+//clear page, is hidden
+
+//two siblings (random search, intentional search)
+
+//random
+
+
+
 
 //hylia serif by artsy omni
 
@@ -51,7 +62,7 @@ function populatePage(arr) {
   if (arr.common_locations != null) {
     document.querySelector('.locationsHeader').innerText = 'Common Locations'
     document.querySelector('.locations').innerText = arr.common_locations
-  } if (arr.drops !=null) {
+  } if (arr.drops != null) {
     document.querySelector('.dropsHeader').innerText = 'Drops'
     document.querySelector('.drops').innerText = arr.drops
   } if (data.data.category === 'equipment') {

@@ -1,3 +1,4 @@
+/* Mobile-first design */
 /******************************************
 /* CSS
 /*******************************************/
@@ -18,15 +19,25 @@
   font-display: swap;
 }
 
-
+html {
+  background-image: url(/img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: auto 100vh;
+  background-position: -800px 0;
+  background-attachment:fixed;
+}
 
 body {
-  background-color: rgb(206, 235, 234);
-  color: rgb(48, 102, 112);
+  color:rgb(250, 248, 236);
   margin:auto;
-  width:1000px;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  width:95%;
+  font-size:2em;
+  font-family:'Roboto', san-serif;
+  text-shadow:1px 1px 10px  rgb(37, 145, 184), 1px 1px 10px  rgb(37, 145, 184);
 }
+
+
+
 /* Box Model Hack */
 *{
   box-sizing: border-box;
@@ -36,168 +47,85 @@ body {
 /* LAYOUT
 /*******************************************/
 
-
-.hidden {
-  display:none;
-}
-
-.searchBar {
-  display:flex;
-  flex-direction: column;
-  justify-content:center;
-  align-items:center;
-
-}
-
-.searchBar > * {
-  width:300px;
-  margin:auto;
-}
-
-.buttons {
-  display:flex;
-  justify-content:center;
-  
+main {
+  min-height:50vh;
+  margin-top:5vh;
+  height:fit-content;
+  padding-bottom:20px;
+  margin-bottom:30px;
 }
 
 h1 {
-  margin-bottom:30px;
-  
+  height:20vh;
+  padding:100px;
 }
 
-h1 + h2 {
-  width: 400px;
-  margin:auto;
-  text-align:center;
-  margin-bottom:30px;
-  
+div.searchBar {
+  height:20vh;
+  display:flex;
+  align-items:center;
+  justify-content:flex-start;
+  flex-direction:column;
 }
 
-div#monster {
-  width:570px;
-  margin:auto;
-  background-color:rgb(26, 42, 59);
-  padding:15px;
-  margin-top:10px;
-  height:420px;
+#article {
+  margin:0 70px ;
+  font-size:1.2em;
 }
 
-div#background {
-  width:570px;
-  margin:auto;
-  background-color:rgb(26, 42, 59);
-  padding:15px;
-  margin-top:50px;
-  height:420px;
+.photo {
+  width:400px;
 }
 
-#monster img {
-  width:150px;
-  float:right;
-  margin:10px;
-  border-radius:20px;
-}
-
-img.overlay {
-  width:1000px;
-  position:absolute;
-}
-
-div.overlay {
-  margin:auto;
-  width:1000px;
-}
-
-h2.name {
-  margin-left:40px;
-}
 
 
 /******************************************
 /* ADDITIONAL STYLES
 /*******************************************/
 
+main {  
+    background:rgba(45, 45, 68, 0.854);
+    border-radius:40px;
+}
+
 h1 {
-  color: rgb(251, 249, 231);
   text-align:center;
   font-family: 'Hylia Serif Beta';
-  font-size:90px;
   font-weight:normal;
-  text-shadow: rgba(177, 130, 116, 0.427) 1px 0 10px;
+  font-size:4em;
+  color:rgb(249, 244, 205);
+  text-shadow: rgba(255, 255, 255, 0.427) 1px 0 10px;
 }
 
-h2 {
-  
-  font-family: 'Hylia Serif Beta';
+.photo{
+  border:2px solid white;
+  padding: 10px;
+  border-radius:2px;
 }
 
-.name {
-  font-size: 35px;
+
+input[type=search] {
+  border:none;
+  height:30px;
+  border-radius: 20px;
+  background-color: rgb(254, 252, 231);
+  height:80px;
+  width:600px;
+  font-size:1.5em;
 }
 
 button {
-  background-color:rgb(251, 249, 231);
+  background-color:rgba(255, 255, 255, 0.026);
   border-radius: 10px;
-  height:40px;
   border: 0;
+  width:200px;
+  font-size:2.5em;
   margin:10px;
-  color: rgb(48, 102, 112);
+  color: white;
+  text-shadow:1px 1px 10px  rgb(37, 145, 184), 1px 1px 10px  rgb(37, 145, 184);
   padding: 10px 10px;
+  padding-top:20px;
 }
-
-input {
-  border:none;
-  height:30px;
-  border-radius: 5px;
-}
-
-.sheikah {
-  font-family:'BOTW Hylian';
-  color:rgb(115, 233, 251);
-  text-shadow: rgb(115, 233, 251) 1px 0 10px;
-  z-index:-1;
-  display: flex;
-  flex-direction:column;
-  overflow:hidden;
-  width:inherit;
-  height:400px;
-  
-  text-align:center;
-  animation: primary 20s linear infinite;
-}
-
-#sheikahOne {
-  line-height:40px;
-  margin-bottom:60px;
-}
-
-#sheikahTwo {
-  margin-bottom: 30px;
-  line-height:30px;
-}
-
-@keyframes primary {
-  from {
-    left: 0%;
-  }
-  to {
-    left: -100%;
-  }
-}
-
-@keyframes secondary {
-  from {
-    left: 100%;
-  }
-  to {
-    left: 0%;
-  }
-}
-
-
-
-
-  
 
 
 
