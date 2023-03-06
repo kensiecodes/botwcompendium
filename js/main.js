@@ -1,88 +1,149 @@
-//parent object search
-//load the api info
-//populate the page
-//clear page, is hidden
-
-//two siblings (random search, intentional search)
-
-//random
-
-
-
-
-//hylia serif by artsy omni
-
-//global variables
-const monster = document.querySelector('#monster')
+const monsterEl = document.querySelector('#monster');
 let url;
+let data;
+let names = [];
 
-document.querySelector('#search').addEventListener('click', getSpecific)
-document.querySelector('#random').addEventListener('click', getRandom)
 
-function getSpecific(){
-  clearPage()
-  let choice = document.querySelector('input').value
-  choice = choice.trim().split(' ').join('%20')
-  console.log(choice)
-  url = `https://botw-compendium.herokuapp.com/api/v2/entry/${choice}`
-  getFetch()
+fetchNameData();
+
+async function fetchNameData() {
+  try {
+    const response = await fetch('https://botw-compendium.herokuapp.com/api/v2/all');
+    data = await response.json();
+    generateNamesArr()
+  } catch (error) {
+    console.error(error);
+  }
 }
 
-function getRandom(){
-  clearPage()
+function generateNamesArr() {
+  const saveNames = (itemArray) => {
+    itemArray.forEach(element => names.push(element.name))
+  }
+  if (localStorage.getItem("searchNamesArray") === null) {
+    saveNames(data.data.creatures.food);
+    saveNames(data.data.creatures.non_food);
+    saveNames(data.data.materials);
+    saveNames(data.data.equipment);
+    saveNames(data.data.monsters);
+    saveNames(data.data.treasure);
+    localStorage.setItem('searchNamesArray', JSON.stringify(names));
+  } else  {
+    names = JSON.parse(localStorage.getItem('searchNamesArray'));
+  }
+  
+}
+
+
+const inputEl = document.querySelector('input');
+const suggestionEl = document.querySelector('#suggestion');
+
+inputEl.addEventListener('input', () => {
+  const inputValue = inputEl.value.trim();
+  if (inputValue.length > 0) {
+    const matchingNames = names.filter(name => name.includes(inputValue));
+    const suggestionHtml = matchingNames.map(name => `<li>${name}</li>`).join('');
+    suggestionEl.innerHTML = suggestionHtml;
+  } else {
+    suggestionEl.innerHTML = '';
+  }
+});
+
+suggestionEl.addEventListener('click', event => {
+  if (event.target.tagName === 'LI') {
+    const selectedProp = event.target.innerText;
+    inputEl.value = selectedProp;
+    suggestionEl.innerHTML = '';
+  }
+}); //inputEl and suggestionEl combine to make an autocomplete search feature
+
+// inputEl.addEventListener('keyup', event => {
+//   console.log('working')
+//   if (event.code === 'Enter') {
+//     const inputValue = inputEl.value.trim().split(' ').join('%20');
+//     console.log(inputValue)
+//     if (inputValue.length > 0) {
+//       url = `https://botw-compendium.herokuapp.com/api/v2/entry/${inputValue}`
+//       fetchData()
+//     }
+//   }
+// }); //this event listener reads for the enter key 
+
+document.querySelector('#search-button').addEventListener('click', search);
+document.querySelector('#random-button').addEventListener('click', getRandom);
+document.querySelector('.titleText').addEventListener('click', clearPage);
+
+function search() {
+  const inputValue = inputEl.value.trim().split(' ').join('%20');
+  clearPage();
+  url = `https://botw-compendium.herokuapp.com/api/v2/entry/${inputValue}`;
+  console.log(url)
+  fetchData()
+}
+
+function getRandom() {
+  clearPage();
   const random = () => {
     return Math.floor(Math.random() * (389 - 1 + 1) + 1);
-  }
-  url = `https://botw-compendium.herokuapp.com/api/v2/entry/${random()}`
-  getFetch()
-  //389 items in compendium total - 389 unique ids
+  };
+  url = `https://botw-compendium.herokuapp.com/api/v2/entry/${random()}`;
+  fetchData()
 }
 
-
-function getFetch(){
+function fetchData() {
   fetch(url)
-  .then(res => res.json()) // parse response as JSON
-  .then(data => {
-    console.log(data)
-    console.log(data.data.category)
-    populatePage(data.data)
-  
-  })
-  .catch(err => {
-      console.log(`error ${err}`)
-  });
+    .then(res => res.json())
+    .then(data => {
+      populatePage(data.data);
+    })
+    .catch(err => {
+      console.error(err);
+    });
 }
 
-function populatePage(arr) {
-  monster.classList.toggle('hidden')
-  document.querySelector('.name').innerText = arr.name
-  document.querySelector('.photo').src = arr.image
-  document.querySelector('.description').innerText = arr.description
-  document.querySelector('.type').innerText = `Type: ${arr.category}`
-  if (arr.common_locations != null) {
-    document.querySelector('.locationsHeader').innerText = 'Common Locations'
-    document.querySelector('.locations').innerText = arr.common_locations
-  } if (arr.drops != null) {
-    document.querySelector('.dropsHeader').innerText = 'Drops'
-    document.querySelector('.drops').innerText = arr.drops
-  } if (data.data.category === 'equipment') {
-  document.querySelector('.defense').innerText = `Defense: ${arr.defense}`
-  document.querySelector('.attack').innerText = `Attack: ${arr.attack}`
+function populatePage(data) {
+  monsterEl.classList.toggle('hidden');
+  document.querySelector('.name').innerText = data.name;
+  document.querySelector('.photo').src = data.image;
+  document.querySelector('.description').innerText = data.description;
+  // document.querySelector('.type').innerText = `Type: ${data.category}`;
+
+  if (data.common_locations !== null) {
+    document.querySelector('.locationsHeader').innerText = 'Common Locations';
+    document.querySelector('.locations').innerText = data.common_locations;
+  }
+  if (data.drops !== [] || data.drops !== null) {
+    document.querySelector('.dropsHeader').innerText = 'Drops';
+    document.querySelector('.drops').innerText = data.drops;
+  }
+  if (data.defense !== undefined) {
+    document.querySelector('.defense').innerText = `Defense: ${data.defense}`;
+    document.querySelector('img.iconDefense').src = 'img/types/defense.png';
+  }
+  if (data.attack !== undefined) {
+    document.querySelector('.attack').innerText = `Attack: ${data.attack}`;
+    document.querySelector('img.iconAttack').src = 'img/types/sword.png';
   }
 }
 
-function clearPage(){
- if (!isHidden(monster)) {
-    monster.classList.toggle('hidden')
-  } 
-  
+function clearPage() {
+  const clearEls = document.querySelectorAll('.clear');
+  const clearImgEls = document.querySelectorAll('.clearImg');
+  console.log(clearImgEls);
+  if (!isHidden(monsterEl)) {
+    monsterEl.classList.toggle('hidden');
+    for (let i = 0; i < clearEls.length; i++) {
+      clearEls[i].innerText = null;
+    }
+    for (let i = 0; i < clearImgEls.length; i++) {
+      clearImgEls[i].src = undefined;
+    }
+  }
 }
 
 const isHidden = elem => {
-  const styles = window.getComputedStyle(elem)
-  return styles.display === 'none' || styles.visibility === 'hidden'
-}
+  const styles = window.getComputedStyle(elem);
+  return styles.display === 'none' || styles.visibility === 'hidden';
+};
 
 
-
-// class 28 middle : appending object values to list items

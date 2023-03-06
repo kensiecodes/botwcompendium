@@ -20,7 +20,7 @@
 }
 
 html {
-  background-image: url(/img/background.jpg);
+  background-image: url(img/background.jpg);
   background-repeat: no-repeat;
   background-size: auto 100vh;
   background-position: -800px 0;
@@ -28,12 +28,12 @@ html {
 }
 
 body {
-  color:rgb(250, 248, 236);
+  color:#E7E4D6;
   margin:auto;
   width:95%;
   font-size:2em;
   font-family:'Roboto', san-serif;
-  text-shadow:1px 1px 10px  rgb(37, 145, 184), 1px 1px 10px  rgb(37, 145, 184);
+  /* text-shadow:1px 1px 10px  rgb(37, 145, 184), 1px 1px 10px  rgb(37, 145, 184); */
 }
 
 
@@ -47,21 +47,35 @@ body {
 /* LAYOUT
 /*******************************************/
 
+#monster * {
+  margin-top:2px;
+  
+}
+
 main {
-  min-height:50vh;
+  min-width: 362px;
+  min-height: 423px;
+  width:90%;
+  margin:auto;
   margin-top:5vh;
   height:fit-content;
   padding-bottom:20px;
-  margin-bottom:30px;
+  margin-bottom:70px !important;
+}
+
+header {
+  width:100%;
+  text-align:center;
 }
 
 h1 {
-  height:20vh;
-  padding:100px;
+  height:19vh;
+  padding-top:100px;
+  margin-bottom:10px;
 }
 
 div.searchBar {
-  height:20vh;
+  height:15vh;
   display:flex;
   align-items:center;
   justify-content:flex-start;
@@ -69,12 +83,63 @@ div.searchBar {
 }
 
 #article {
-  margin:0 70px ;
+  min-height:0;
+  height:fit-content;
   font-size:1.2em;
 }
 
 .photo {
   width:400px;
+  float: left;
+}
+
+h2.name {
+  clear:both;
+}
+
+div.stats {
+  height:400px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-end;
+  flex-direction:column;
+  width:300px;
+  
+}
+
+div.stats * {
+  margin:0;
+}
+
+div.stats span {
+  width:300px;
+  margin:10px;
+  display:flex;
+  justify-content:flex-end;
+}
+
+
+
+span img {
+  float:left;
+}
+
+#suggestion {
+  min-height:0;
+  position:absolute;
+  z-index: 1;
+  width: 600px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  background-color: rgba(197, 254, 244, 0.8);
+  color:rgb(48, 102, 112);
+  list-style: none;
+  font-size:50px;
+  margin-top:0;
+  border-radius:0 0 20px 20px;
 }
 
 
@@ -83,9 +148,15 @@ div.searchBar {
 /* ADDITIONAL STYLES
 /*******************************************/
 
+a {
+  color:white;
+  text-decoration:none;
+
+  }
+
 main {  
-    background:rgba(45, 45, 68, 0.854);
-    border-radius:40px;
+background: rgba(20, 43, 87, 0.8);
+border-radius: 100px;
 }
 
 h1 {
@@ -93,38 +164,52 @@ h1 {
   font-family: 'Hylia Serif Beta';
   font-weight:normal;
   font-size:4em;
-  color:rgb(249, 244, 205);
-  text-shadow: rgba(255, 255, 255, 0.427) 1px 0 10px;
+  color:#E7E4D6;
+  
+}
+
+header > p {
+  margin-bottom:50px;
+  font-size:1.1em;
 }
 
 .photo{
-  border:2px solid white;
+  border:6px solid rgba(255, 255, 255, 0.219);
   padding: 10px;
   border-radius:2px;
 }
 
 
-input[type=search] {
+form input {
   border:none;
-  height:30px;
-  border-radius: 20px;
+  height:43px;
+  border-radius: 30px;
   background-color: rgb(254, 252, 231);
   height:80px;
+  padding-left:20px;
   width:600px;
   font-size:1.5em;
+  color:rgb(48, 102, 112);
 }
 
 button {
-  background-color:rgba(255, 255, 255, 0.026);
-  border-radius: 10px;
+  background: rgba(197, 254, 244, 0.5);
+  border-radius: 30px;
   border: 0;
-  width:200px;
+  width:180px;
+  height:120px;
   font-size:2.5em;
   margin:10px;
-  color: white;
-  text-shadow:1px 1px 10px  rgb(37, 145, 184), 1px 1px 10px  rgb(37, 145, 184);
   padding: 10px 10px;
-  padding-top:20px;
+  font-weight: 900;
+  font-size: 80px;
+  line-height: 41px;
+  color: #E7E4D6;
+}
+
+.hidden {
+  visibility: hidden;
+  display:none;
 }
 
 

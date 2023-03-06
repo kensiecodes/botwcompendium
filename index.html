@@ -1,62 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-    	<meta charset="utf-8">
-    	<meta name="description" content="Legend of Zelda Breath of the Wild API search interface. An encyclopedia for the Switch game.">
-    	<meta name="keywords" content="wiki, zelda, botw, materials, creatures, equipment, sword, stats, where, location">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="description"
+      content="Legend of Zelda Breath of the Wild API search interface. An encyclopedia for the Switch game."/>
+    <meta
+      name="keywords"
+      content="wiki, zelda, botw, materials, creatures, equipment, sword, stats, where, location"/>
 
-		<title>Zelda Companion</title>
+    <title>Zelda Companion</title>
 
-		<!-- external CSS link -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet">
-		<link rel="stylesheet" href="css/normalize.css">
-		<link rel="stylesheet" href="css/style.css">
-	</head>
-	<body>
-		
-		<main>
+    <!-- external CSS link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
-			<h1>Hyrule Compendium</h1>
+  </head>
 
-			<div class="searchBar">
-				<input type="search" name="" value="">
-				<div class="buttons">
-					<button type="button" id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
-					<button type="button" id="random"><i class="fa-solid fa-dice"></i></button>
-				</div>
-			</div>
-			
-			<div id="article">
-				
-				<div id="monster" class="hidden" >
-					
-					
-					<h2 class="name"></h2> <!--Name-->
-					<img class="photo" src="" alt=""> <!--icon-->
-					<span class="defense"></span><!--defense-->
-					<span class="attack"></span><!--attack-->
-					<span class="type"></span>
-					
-					<h4 class="locationsHeader"></h4>
-					<ul class="locations"><!--common locations-->
+  <body>
 
-					</ul>
-					<h4 class="dropsHeader"></h4>
-					<ul class="drops"><!--drops-->
+    <main>
 
-					</ul>
-					<span class="effect"></span><!--cooking effect-->
-					<p class="description"></p><!--description-->
-					
-				</div>
-			</div>
+      <header>
+        <h1 class="titleText">Hyrule Compendium</h1>
 
-		</main>
-		
-		<!-- font awesome and script -->
-		<script src="https://kit.fontawesome.com/0463fdd330.js" crossorigin="anonymous"></script>
-		<script type="text/javascript" src="js/main.js"></script>
-	</body>
+        <p>Search or open a random page...</p>
+      </header>
+
+     
+
+      <div class="searchBar">
+        
+        <form autocomplete="off">
+          
+          <input type="text" id="search-input" />
+
+          <ul id="suggestion"></ul>
+
+        </form>
+
+        
+
+        <div class="buttons">
+
+          <button type="button" id="search-button" >
+
+            <i class="fa-solid fa-magnifying-glass"></i>
+
+          </button>
+
+          <button type="button" id="random-button" >
+
+            <i class="fa-solid fa-dice"></i>
+            
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- Chose to do one semantic tag for each element, and one clear to select all for clearing
+      in between searches -->
+
+      <div id="article">
+
+        <div id="monster" class="hidden">
+
+          <div>
+
+            <img class="photo clear" src="" alt="" />
+
+            <div class="stats">
+
+              <span>
+                <img class="iconDefense clearImg" src="" alt="">
+                <p class="defense clear"></p>
+              </span>
+              
+              <span>
+                <img class="iconAttack clearImg" src="" alt="">
+                <p class="attack clear"></p>
+              </span>
+
+              <span class="hearts clear"></span>
+              <span class="effect clear"></span>
+
+            </div>
+          </div>
+          
+
+
+          <h2 class="name clear"></h2>
+
+          <p class="description clear"></p>
+        
+         
+
+          
+          <h4 class="locationsHeader clear"></h4>
+          <ul class="locations clear"></ul>
+
+          
+        
+          
+          <h4 class="dropsHeader clear"></h4>
+          <ul class="drops clear"></ul>
+
+          
+          
+        </div>
+      </div>
+
+      <!-- <nav><a href="https://twitter.com/MackensieJack"> &#169; Kensie Jack  <i class="fa-brands fa-github"></i></a></nav> -->
+    </main>
+
+    <!-- font awesome and script -->
+    <script src="https://kit.fontawesome.com/0463fdd330.js"
+      crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+  </body>
 </html>
