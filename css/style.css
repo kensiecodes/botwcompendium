@@ -52,6 +52,14 @@ body {
   
 }
 
+#monster {
+  width:90%;
+  margin:auto;
+  min-height:0;
+  height:fit-content;
+  font-size:1.2em;
+}
+
 main {
   min-width: 362px;
   min-height: 423px;
@@ -82,14 +90,11 @@ div.searchBar {
   flex-direction:column;
 }
 
-#article {
-  min-height:0;
-  height:fit-content;
-  font-size:1.2em;
-}
+
 
 .photo {
-  width:400px;
+  width:475px;
+  margin-left:50px;
   float: left;
 }
 
@@ -98,24 +103,26 @@ h2.name {
 }
 
 div.stats {
+  float:right;
   height:400px;
   display:flex;
   align-items:flex-end;
   justify-content:flex-end;
   flex-direction:column;
-  width:300px;
+  padding-right:40px;
+  width:100px;
   
 }
 
 div.stats * {
   margin:0;
+  margin-right:20px;
 }
 
 div.stats span {
-  width:300px;
   margin:10px;
   display:flex;
-  justify-content:flex-end;
+  justify-content:space-between;
 }
 
 
@@ -125,7 +132,7 @@ span img {
 }
 
 #suggestion {
-  min-height:0;
+  
   position:absolute;
   z-index: 1;
   width: 600px;

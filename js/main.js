@@ -31,7 +31,6 @@ function generateNamesArr() {
   } else  {
     names = JSON.parse(localStorage.getItem('searchNamesArray'));
   }
-  
 }
 
 
@@ -108,21 +107,22 @@ function populatePage(data) {
   document.querySelector('.description').innerText = data.description;
   // document.querySelector('.type').innerText = `Type: ${data.category}`;
 
-  if (data.common_locations !== null) {
+  if (data.common_locations !== undefined) {
     document.querySelector('.locationsHeader').innerText = 'Common Locations';
     document.querySelector('.locations').innerText = data.common_locations;
+
   }
-  if (data.drops !== [] || data.drops !== null) {
+  if (data.drops !== undefined && data.drops.length > 0) {
     document.querySelector('.dropsHeader').innerText = 'Drops';
     document.querySelector('.drops').innerText = data.drops;
   }
   if (data.defense !== undefined) {
-    document.querySelector('.defense').innerText = `Defense: ${data.defense}`;
-    document.querySelector('img.iconDefense').src = 'img/types/defense.png';
+    document.querySelector('.defense').innerText = `${data.defense}`;
+    document.querySelector('img.iconDefense').src = 'css/img/types/defense.png';
   }
   if (data.attack !== undefined) {
-    document.querySelector('.attack').innerText = `Attack: ${data.attack}`;
-    document.querySelector('img.iconAttack').src = 'img/types/sword.png';
+    document.querySelector('.attack').innerText = `${data.attack}`;
+    document.querySelector('img.iconAttack').src = 'css/img/types/sword.png';
   }
 }
 
