@@ -11,6 +11,7 @@ Credits - [Hylia Serif](https://artsyomni.com/hyliaserif) - [BoTW API (Hyrule Co
 - Implement error page
 - Click out of autocomplete window?
 - Styling details
+- Search on enter key
 
 ## Merge History
 
@@ -19,4 +20,4 @@ Credits - [Hylia Serif](https://artsyomni.com/hyliaserif) - [BoTW API (Hyrule Co
 - Begin UI overhaul (Feb 21, 2023)
   I'm currently learning OOP and async/await, so I'm quickly realizing the issues left in my script. I was also not super happy with the quality of the UI and know I can do better. Granted, the initial stage of the project was completed in 1-2 days. I commented out the entire CSS and am beginning from the mobile site. I added 'Roboto' font which is, in italics, very similar to the in-game font. Next will be working out the details of the API -> DOM and seriously refactoring my JS.
 - Total refactoring, restyling, and added features (March 5, 2023)
-  I've implemented an auto-complete search feature which required some async/await to store the names at page load. I am matching the styling to the wireframe I created in Figma. Seems like a nesting doll of issues-- once I implement a new feature to solve a problem, a new one arises. Next to complete matching styling to wireframe.
+  I've implemented an auto-complete search feature which required some async/await to store the names at page load. I am matching the styling to the wireframe I created in Figma. Seems like a nesting doll of issues-- once I implement a new feature to solve a problem, a new one arises. Next, will complete matching styling to wireframe.
