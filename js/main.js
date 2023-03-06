@@ -102,7 +102,9 @@ function fetchData() {
 
 function populatePage(data) {
   monsterEl.classList.toggle('hidden');
-  document.querySelector('.name').innerText = data.name;
+  document.querySelector('.name').innerText = data.name.split(' ').map(element => 
+    element.charAt(0).toUpperCase() + element.slice(1)
+  ).join(' ');
   document.querySelector('.photo').src = data.image;
   document.querySelector('.description').innerText = data.description;
   // document.querySelector('.type').innerText = `Type: ${data.category}`;

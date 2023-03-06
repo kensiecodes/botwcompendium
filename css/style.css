@@ -90,16 +90,16 @@ div.searchBar {
   flex-direction:column;
 }
 
-
-
 .photo {
   width:475px;
-  margin-left:50px;
+  margin-left:30px;
   float: left;
 }
 
 h2.name {
   clear:both;
+  padding-left:30px;
+  padding-top:10px;
 }
 
 div.stats {
@@ -125,14 +125,11 @@ div.stats span {
   justify-content:space-between;
 }
 
-
-
 span img {
   float:left;
 }
 
 #suggestion {
-  
   position:absolute;
   z-index: 1;
   width: 600px;
@@ -162,8 +159,8 @@ a {
   }
 
 main {  
-background: rgba(20, 43, 87, 0.8);
-border-radius: 100px;
+  background: rgba(20, 43, 87, 0.8);
+  border-radius: 100px;
 }
 
 h1 {
@@ -207,6 +204,7 @@ button {
   height:120px;
   font-size:2.5em;
   margin:10px;
+  margin-top:30px;
   padding: 10px 10px;
   font-weight: 900;
   font-size: 80px;
