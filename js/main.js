@@ -110,18 +110,32 @@ function populatePage(data) {
   // document.querySelector('.type').innerText = `Type: ${data.category}`;
 
   if (data.common_locations !== undefined) {
+    document.querySelector('img.locationsIcon').src = 'css/img/types/enchanted.png';
     document.querySelector('.locationsHeader').innerText = 'Common Locations';
-    document.querySelector('.locations').innerText = data.common_locations;
+    let locationsEl = document.querySelector('.locations')
+    data.common_locations.forEach(element => {
+      const li = document.createElement("li");
+      li.textContent = element;
+      locationsEl.appendChild(li);
+    }) 
+  }
 
-  }
   if (data.drops !== undefined && data.drops.length > 0) {
+    document.querySelector('img.dropsIcon').src = 'css/img/types/materials.png';
     document.querySelector('.dropsHeader').innerText = 'Drops';
-    document.querySelector('.drops').innerText = data.drops;
+    let dropsEl = document.querySelector('.drops')
+    data.drops.forEach(element => {
+      const li = document.createElement("li");
+      li.textContent = element;
+      dropsEl.appendChild(li);
+    })
   }
+
   if (data.defense !== undefined && data.defense > 0 && data.defense !== null) {
     document.querySelector('.defense').innerText = `${data.defense}`;
     document.querySelector('img.iconDefense').src = 'css/img/types/defense.png';
   }
+
   if (data.attack !== undefined && data.attack > 0 && data.attack !== null) {
     document.querySelector('.attack').innerText = `${data.attack}`;
     document.querySelector('img.iconAttack').src = 'css/img/types/sword.png';

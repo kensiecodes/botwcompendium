@@ -113,7 +113,6 @@ div.stats {
 .description {
   padding:40px 10px;
   margin:0;
-
 }
 
 div.stats * {
@@ -148,6 +147,17 @@ span img {
   border-radius:0 0 20px 20px;
 }
 
+.locationsIcon, .dropsIcon {
+  float:left;
+  padding-top:27px;
+  padding-left:10px;
+}
+
+.locationsHeader, .dropsHeader {
+  margin:0;
+  padding-top:30px;
+  
+}
 
 
 /******************************************
@@ -176,6 +186,11 @@ h1 {
 
 .border {
   border-bottom: 6px solid rgba(255, 255, 255, 0.219);
+}
+
+.dropsHeader {
+  padding-top:30px;
+  border-top: 6px solid rgba(255, 255, 255, 0.219);
 }
 
 header > p {
