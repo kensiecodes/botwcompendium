@@ -47,10 +47,6 @@ body {
 /* LAYOUT
 /*******************************************/
 
-#monster * {
-  margin-top:2px;
-  
-}
 
 #monster {
   width:90%;
@@ -99,19 +95,25 @@ div.searchBar {
 h2.name {
   clear:both;
   padding-left:30px;
-  padding-top:10px;
+  padding: 20px 10px;
+  margin:0;
 }
 
 div.stats {
   float:right;
-  height:400px;
+  height:475px;
   display:flex;
   align-items:flex-end;
   justify-content:flex-end;
   flex-direction:column;
   padding-right:40px;
-  width:100px;
-  
+  width:200px;
+}
+
+.description {
+  padding:40px 10px;
+  margin:0;
+
 }
 
 div.stats * {
@@ -170,6 +172,10 @@ h1 {
   font-size:4em;
   color:#E7E4D6;
   
+}
+
+.border {
+  border-bottom: 6px solid rgba(255, 255, 255, 0.219);
 }
 
 header > p {

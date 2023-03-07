@@ -118,11 +118,11 @@ function populatePage(data) {
     document.querySelector('.dropsHeader').innerText = 'Drops';
     document.querySelector('.drops').innerText = data.drops;
   }
-  if (data.defense !== undefined) {
+  if (data.defense !== undefined && data.defense > 0 && data.defense !== null) {
     document.querySelector('.defense').innerText = `${data.defense}`;
     document.querySelector('img.iconDefense').src = 'css/img/types/defense.png';
   }
-  if (data.attack !== undefined) {
+  if (data.attack !== undefined && data.attack > 0 && data.attack !== null) {
     document.querySelector('.attack').innerText = `${data.attack}`;
     document.querySelector('img.iconAttack').src = 'css/img/types/sword.png';
   }
