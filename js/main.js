@@ -109,7 +109,7 @@ function populatePage(data) {
   document.querySelector('.description').innerText = data.description;
   // document.querySelector('.type').innerText = `Type: ${data.category}`;
 
-  if (data.common_locations !== undefined) {
+  if (data.common_locations !== undefined && data.common_locations.length > 0) {
     document.querySelector('img.locationsIcon').src = 'css/img/types/enchanted.png';
     document.querySelector('.locationsHeader').innerText = 'Common Locations';
     let locationsEl = document.querySelector('.locations')
@@ -154,6 +154,8 @@ function clearPage() {
     for (let i = 0; i < clearImgEls.length; i++) {
       clearImgEls[i].src = undefined;
     }
+    document.querySelector('.locations').innerHTML = ''
+    document.querySelector('.drops').innerHTML = ''
   }
 }
 
