@@ -23,7 +23,7 @@ html {
   background-image: url(img/background.jpg);
   background-repeat: no-repeat;
   background-size: auto 100vh;
-  background-position: 0;
+  background-position: -800px 0;
   background-attachment:fixed;
 }
 
@@ -31,13 +31,12 @@ body {
   color:#E7E4D6;
   margin:auto;
   width:95%;
+  font-size:40px;
   font-family:'Roboto', san-serif;
+  /* text-shadow:1px 1px 10px  rgb(37, 145, 184), 1px 1px 10px  rgb(37, 145, 184); */
 }
 
-.hidden {
-  visibility: hidden;
-  display:none;
-}
+
 
 /* Box Model Hack */
 *{
@@ -45,7 +44,7 @@ body {
 }
 
 /******************************************
-/* Layout
+/* LAYOUT
 /*******************************************/
 
 
@@ -54,7 +53,7 @@ body {
   margin:auto;
   min-height:0;
   height:fit-content;
-
+  font-size:1.2em;
 }
 
 main {
@@ -145,7 +144,7 @@ span img {
   background-color: rgba(197, 254, 244, 0.8);
   color:rgb(48, 102, 112);
   list-style: none;
-
+  font-size:50px;
   margin-top:0;
   border-radius:0 0 20px 20px;
 }
@@ -182,7 +181,7 @@ h1 {
   text-align:center;
   font-family: 'Hylia Serif Beta';
   font-weight:normal;
- 
+  font-size:120px;
   width:fit-content;
   color:#E7E4D6;
   
@@ -199,7 +198,7 @@ h1 {
 
 header > p {
   margin-bottom:50px;
-
+  font-size:1.1em;
 }
 
 .photo{
@@ -217,7 +216,7 @@ form input {
   height:80px;
   padding-left:20px;
   width:600px;
-
+  font-size:1.5em;
   color:rgb(48, 102, 112);
 }
 
@@ -232,6 +231,7 @@ button {
   margin-top:30px;
   padding: 10px 10px;
   font-weight: 900;
+  font-size: 80px;
   line-height: 41px;
   color: #E7E4D6;
 }
@@ -242,7 +242,30 @@ button {
 }
 
 
+/* @media (min-width: 600px) and (orientation: portrait) {
+  html {
+    background-image: url(img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: auto 100vh;
+    background-attachment:fixed;
+  }
 
+  .title--search {
+    font-size:30px;
+    max-width:400px;
+   
+  }
+
+  .title--search > * {
+    margin:0;
+  }
+
+  .title--text {
+    font-size:60px;
+  }
+
+
+}  */
 
   
 
@@ -260,15 +283,5 @@ brown rgb(108, 95, 50)
 
 search bar
 
-rgb(115, 233, 251)*/
+rgb(115, 233, 251)
 
-
-@media (min-width: 1250px) {
-  html {
-    background-image: url(img/background.jpg);
-    background-repeat: no-repeat; 
-    background-size: 100%;
-    background-position: 0;
-    background-attachment:fixed;
-  }
-}

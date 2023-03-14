@@ -70,7 +70,7 @@ suggestionEl.addEventListener('click', event => {
 
 document.querySelector('#search-button').addEventListener('click', search);
 document.querySelector('#random-button').addEventListener('click', getRandom);
-document.querySelector('.titleText').addEventListener('click', clearPage);
+document.querySelector('.title--text').addEventListener('click', clearPage);
 
 function search() {
   const inputValue = inputEl.value.trim().split(' ').join('%20');
