@@ -564,6 +564,10 @@ video {
   display: none;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .border {
   border-width: 1px;
 }
@@ -571,4 +575,13 @@ video {
 .bg-black {
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
