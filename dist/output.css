@@ -560,16 +560,65 @@ video {
   margin: auto;
 }
 
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
 .hidden {
   display: none;
 }
 
-.w-full {
-  width: 100%;
+.w-10\/12 {
+  width: 83.333333%;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.content-center {
+  align-content: center;
+}
+
+.content-end {
+  align-content: flex-end;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.rounded-md {
+  border-radius: 0.375rem;
 }
 
 .border {
   border-width: 1px;
+}
+
+.bg-bgblue {
+  background-color: #142B57CC;
 }
 
 .bg-black {
@@ -577,11 +626,115 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-smoke {
+  background-color: #C5FEF480;
+}
+
+.p-8 {
+  padding: 2rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-3 {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
+}
+
 .text-center {
   text-align: center;
 }
 
-.text-white {
+.font-hylian {
+  font-family: Hylia Serif, san-serif;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.text-3xl {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.text-tan {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
+  color: rgb(231 228 214 / var(--tw-text-opacity));
+}
+
+@font-face {
+  font-family: "Hylia Serif";
+
+  src: url("../public/fonts/HyliaSerifBeta-Regular.woff");
+}
+
+body {
+  font-family: "Roboto", san-serif;
+}
+
+html {
+  background-image: url(../public/img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: auto 100vh;
+  background-position: 0;
+  background-attachment: fixed;
+}
+
+/* still need to make background fully responsive */
+
+@media (min-width: 1250px) {
+  html {
+    background-image: url(../public/img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0;
+    background-attachment: fixed;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:w-8\/12 {
+    width: 66.666667%;
+  }
+
+  .md\:p-20 {
+    padding: 5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:w-1\/2 {
+    width: 50%;
+  }
 }

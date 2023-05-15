@@ -22,21 +22,21 @@
 
   <body>
 
-    <main class="m-auto w-full bg-black text-white">
+    <main class="m-auto w-10/12 md:w-8/12 xl:w-1/2  pt-10 my-20 bg-bgblue text-tan p-8 md:p-20 rounded">
 
-      <div class="container ">
+      <div class="container flex justify-center text-center content-center flex-col m-auto">
 
-        <div class="title--search">
+        <div class="title--search m-auto flex flex-col">
 
-          <header>
-            <h1 class="title--text">Hyrule Compendium</h1>
+          <header class="m-auto">
+            <h1 class="title--text font-hylian text-5xl pb-3 text-center">Hyrule Compendium</h1>
 
-            <p>Search or open a random page...</p>
+            <p class=" text-center pb-3">Search or open a random page...</p>
           </header>
 
         
 
-          <div class="search--bar">
+          <div class="search--bar m-auto">
             
             <form autocomplete="off">
               
@@ -44,21 +44,23 @@
 
               <ul id="suggestion"></ul>
 
-          </form>
+            </form>
 
-        <div>
+          </div>
+
+        </div>
 
         
 
-        <div class="buttons">
+        <div class="buttons text-3xl pt-5">
 
-          <button type="button" id="search-button" >
+          <button type="button" id="search-button" class="bg-smoke text-tan py-3 px-8 rounded-md">
 
             <i class="fa-solid fa-magnifying-glass"></i>
 
           </button>
 
-          <button type="button" id="random-button" >
+          <button type="button" id="random-button" class="bg-smoke text-tan py-3 px-8 rounded-md">
 
             <i class="fa-solid fa-dice"></i>
             
@@ -71,13 +73,13 @@
       <!-- Chose to do one semantic tag for each element, and one clear to select all for clearing
       in between searches -->
 
-      <div id="article">
+      <div id="article ">
 
-        <div id="monster" class="hidden">
+        <div id="monster" class="hidden mt-10">
 
-          <div>
+          <div class="flex content-end">
 
-            <img class="photo clear" src="" alt="" />
+            <img class="photo clear mb-4" src="" alt="" />
 
             <div class="stats">
 
@@ -100,9 +102,9 @@
           
 
 
-          <h2 class="name clear border"></h2>
+          <h2 class="name clear "></h2>
 
-          <p class="description clear border"></p>
+          <p class="description clear"></p>
         
           <div>
           <img class="locationsIcon clearImg" src="" alt="">

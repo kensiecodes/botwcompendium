@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Hylia Serif";
+  src: url("../public/fonts/HyliaSerifBeta-Regular.woff");
+}
+
+body {
+  font-family: "Roboto", san-serif;
+}
+
+html {
+  background-image: url(../public/img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: auto 100vh;
+  background-position: 0;
+  background-attachment: fixed;
+}
+
+/* still need to make background fully responsive */
+
+@media (min-width: 1250px) {
+  html {
+    background-image: url(../public/img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 0;
+    background-attachment: fixed;
+  }
+}
