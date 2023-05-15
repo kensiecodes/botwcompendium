@@ -77,48 +77,60 @@
 
         <div id="monster" class="hidden mt-10">
 
-          <div class="flex content-end">
+          <div class="flex content-center">
 
-            <img class="photo clear mb-4" src="" alt="" />
+              <img class="photo clear mb-4 rounded-md " src="" alt="" />
 
-            <div class="stats">
-
-              <span>
-                <img class="iconDefense clearImg" src="" alt="">
-                <p class="defense clear"></p>
-              </span>
               
-              <span>
-                <img class="iconAttack clearImg" src="" alt="">
-                <p class="attack clear"></p>
-              </span>
-
-              <span class="hearts clear"></span>
-              <span class="effect clear"></span>
-
-            </div>
 
           </div>
           
 
+            <div class="flex border-b-2 border-smoke py-1">
+          <h2 class="name clear  text-2xl pb-0"></h2>
 
-          <h2 class="name clear "></h2>
+          <div class="stats flex pl-5 mt-1">
 
-          <p class="description clear"></p>
+            <span class="flex">
+              <img class="iconDefense clearImg float-left h-6 w-auto" src="" alt="">
+              <p class="defense clear  pl-1"></p>
+            </span>
+            
+            <span class="flex">
+              <img class="iconAttack clearImg float-left h-6 w-auto" src="" alt="">
+              <p class="attack clear pl-1"></p>
+            </span>
+          </div>
+
+            <span class="hearts clear"></span>
+            <span class="effect clear"></span>
+
+        </div >
+
+          <p class="description clear border-b-2 border-smoke py-1"></p>
+
+          <div class="flex ">
+
+            <div class=" ">
         
-          <div>
-          <img class="locationsIcon clearImg" src="" alt="">
-          <h4 class="locationsHeader clear"></h4>
+          <div class="flex pt-1">
+            <img class="locationsIcon clearImg float-left h-6 w-auto " src="" alt="">
+            <h4 class="locationsHeader clear text-xl"></h4>
           </div>
           <ul class="locations clear"></ul>
 
-          <div>
-          <img class="dropsIcon clearImg" src="" alt="">
-          <h4 class="dropsHeader clear"></h4>
+        </div>
+
+        <div class="px-3 py-1">
+          <div class="flex">
+            <img class="dropsIcon clearImg float-left h-6 w-auto" src="" alt="">
+            <h4 class="dropsHeader clear text-xl"></h4>
           </div>
           <ul class="drops clear"></ul>
+        </div>
 
         </div>
+        
           
        
       </div>

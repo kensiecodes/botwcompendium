@@ -5,19 +5,30 @@ Credits - [Hylia Serif](https://artsyomni.com/hyliaserif) - [BoTW API (Hyrule Co
 
 [Vector Graphics](https://www.patreon.com/KraftHP)
 
-## To-do
+## Roadmap
 
-- Multi-device responsiveness
+- ~~Multi-device responsiveness~~
 - Implement error page
 - Click out of autocomplete window?
-- Styling details
 - Search on enter key
 
 ## Merge History
 
-- Initial commit (Feb 18, 2023)
-  Spent a few days working on this and am happy with where it currently stands! Made the Sheikah asset, due to import a few more. Not happy with overall feel from the user standpoint, but pleasantly happy with the functionality after refactoring the JS down to simpler components. Will continue refactoring as I learn more about OOP.
-- Begin UI overhaul (Feb 21, 2023)
-  I'm currently learning OOP and async/await, so I'm quickly realizing the issues left in my script. I was also not super happy with the quality of the UI and know I can do better. Granted, the initial stage of the project was completed in 1-2 days. I commented out the entire CSS and am beginning from the mobile site. I added 'Roboto' font which is, in italics, very similar to the in-game font. Next will be working out the details of the API -> DOM and seriously refactoring my JS.
-- Total refactoring, restyling, and added features (March 5, 2023)
-  I've implemented an auto-complete search feature which required some async/await to store the names at page load. I am matching the styling to the wireframe I created in Figma. Seems like a nesting doll of issues-- once I implement a new feature to solve a problem, a new one arises. Next, will complete matching styling to wireframe.
+### Initial commit (Feb 18, 2023)
+
+Spent a few days working on this and am happy with where it currently stands! Not happy with overall feel from the user standpoint, but pleasantly happy with the functionality after refactoring the JS down to simpler components.
+
+### Begin UI overhaul (Feb 21, 2023)
+
+I'm currently learning OOP and async/await, so I'm quickly realizing the issues left in my script. I have generally been tinkering and troubleshooting certain functions and styling issues. I added 'Roboto' font which is, in italics, very similar to the in-game font. Next will be working out the details of the API -> DOM and seriously refactoring my JS.
+
+### Total refactoring, restyling, and added features (March 5, 2023)
+
+I've implemented an auto-complete search feature which required some async/await to store the names at page load. This also will store the array to local storage. I am matching the styling to the wireframe I created in Figma. Seems like a nesting doll of issues-- once I implement a new feature to solve a problem, a new one arises.
+
+### Converting to Tailwind (May 14, 2023)
+
+This update is essentially just a face lift for this app in order to put in on my portfolio. I'm leaving the old stylesheet (./css/style.css) for posterity, however all of the styling has been converted to Tailwind barring a few complex state-based styles, such as the autocomplete feature, as well as font-faces.
+</br> I've also notated the purpose of each function in the main.js file to demonstrate my logic behind everything.
+</br> I've learned a lot since I began this project so I was able to smoothe out all of the wrinkles in only a day or two. There are some remaining QoL features that could be added but it works and I'm happy with it.
+'

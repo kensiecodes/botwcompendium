@@ -556,6 +556,10 @@ video {
   }
 }
 
+.float-left {
+  float: left;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -565,12 +569,16 @@ video {
   margin-bottom: 5rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .flex {
@@ -581,8 +589,16 @@ video {
   display: none;
 }
 
+.h-6 {
+  height: 1.5rem;
+}
+
 .w-10\/12 {
   width: 83.333333%;
+}
+
+.w-auto {
+  width: auto;
 }
 
 .flex-col {
@@ -591,14 +607,6 @@ video {
 
 .content-center {
   align-content: center;
-}
-
-.content-end {
-  align-content: flex-end;
-}
-
-.justify-end {
-  justify-content: flex-end;
 }
 
 .justify-center {
@@ -613,17 +621,16 @@ video {
   border-radius: 0.375rem;
 }
 
-.border {
-  border-width: 1px;
+.border-b-2 {
+  border-bottom-width: 2px;
+}
+
+.border-smoke {
+  border-color: #C5FEF480;
 }
 
 .bg-bgblue {
   background-color: #142B57CC;
-}
-
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 .bg-smoke {
@@ -634,14 +641,9 @@ video {
   padding: 2rem;
 }
 
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
 .px-8 {
@@ -649,21 +651,38 @@ video {
   padding-right: 2rem;
 }
 
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.pb-0 {
+  padding-bottom: 0px;
 }
 
 .pb-3 {
   padding-bottom: 0.75rem;
 }
 
-.pt-10 {
-  padding-top: 2.5rem;
+.pl-1 {
+  padding-left: 0.25rem;
 }
 
-.pt-8 {
-  padding-top: 2rem;
+.pl-5 {
+  padding-left: 1.25rem;
+}
+
+.pt-1 {
+  padding-top: 0.25rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
 }
 
 .pt-5 {
@@ -678,14 +697,24 @@ video {
   font-family: Hylia Serif, san-serif;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
+}
+
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .text-tan {
@@ -706,14 +735,14 @@ body {
 html {
   background-image: url(../public/img/background.jpg);
   background-repeat: no-repeat;
-  background-size: auto 100vh;
+  background-size: cover;
   background-position: 0;
   background-attachment: fixed;
 }
 
 /* still need to make background fully responsive */
 
-@media (min-width: 1250px) {
+/* @media (min-width: 1250px) {
   html {
     background-image: url(../public/img/background.jpg);
     background-repeat: no-repeat;
@@ -721,6 +750,39 @@ html {
     background-position: 0;
     background-attachment: fixed;
   }
+} */
+
+#suggestion {
+  position: absolute;
+  z-index: 1;
+  width: 200px;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  background-color: rgba(197, 254, 244, 0.8);
+  color: rgb(48, 102, 112);
+  list-style: none;
+  margin-top: 0;
+}
+
+form input {
+  border: none;
+  border-radius: 2px;
+  background-color: rgb(254, 252, 231);
+  height: 30px;
+  padding-left: 5px;
+  width: 200px;
+  color: rgb(48, 102, 112);
+}
+
+#suggestion li:hover {
+  background: #e7e4d6;
+}
+
+.hidden {
+  display: none;
 }
 
 @media (min-width: 768px) {

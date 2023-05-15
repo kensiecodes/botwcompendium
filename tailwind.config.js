@@ -8,6 +8,7 @@ module.exports = {
         brightteal: "#C5FEF4",
         bgblue: "#142B57CC",
         smoke: "#C5FEF480",
+        ghost: "#FFFFFF38",
       },
       fontFamily: {
         hylian: ["Hylia Serif", "san-serif"],

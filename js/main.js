@@ -4,6 +4,7 @@ let data;
 let names = [];
 
 fetchNameData();
+//calls name data function on page load
 
 async function fetchNameData() {
   try {
@@ -16,6 +17,7 @@ async function fetchNameData() {
     console.error(error);
   }
 }
+//fetches data from API and saves to the data array, then calls the generateNameArr function. or sends an error if API fetching fails.
 
 function generateNamesArr() {
   const saveNames = (itemArray) => {
@@ -33,6 +35,8 @@ function generateNamesArr() {
     names = JSON.parse(localStorage.getItem("searchNamesArray"));
   }
 }
+
+//this function's purpose is to populate an array with the "name" property of each object from the API. this is used for the autocomplete search feature. this is only done once and then saved to local storage. the conditional will not allow it to execute if the local storage already has a names array.
 
 const inputEl = document.querySelector("input");
 const suggestionEl = document.querySelector("#suggestion");
@@ -56,7 +60,16 @@ suggestionEl.addEventListener("click", (event) => {
     inputEl.value = selectedProp;
     suggestionEl.innerHTML = "";
   }
-}); //inputEl and suggestionEl combine to make an autocomplete search feature
+});
+
+//inputEl and suggestionEl combine to make an autocomplete search feature.
+
+//inputEl accepts the input value in the form and filters the names array for a matching name,
+//saved to a new array called matching names. suggestionHTML then maps through matchingNames
+//and turns each element into a list item in HTML. then this is set to the innerHTML on the doc.
+
+//suggestionEl is a listener on the list items that populate in the suggestion box. if a list item is clicked,
+//the input autofills with the selected name.
 
 // inputEl.addEventListener('keyup', event => {
 //   console.log('working')
@@ -68,7 +81,9 @@ suggestionEl.addEventListener("click", (event) => {
 //       fetchData()
 //     }
 //   }
-// }); //this event listener reads for the enter key
+// });
+
+//this event listener above is meant to read for the enter key, but still needs debugging.
 
 document.querySelector("#search-button").addEventListener("click", search);
 document.querySelector("#random-button").addEventListener("click", getRandom);
@@ -78,9 +93,9 @@ function search() {
   const inputValue = inputEl.value.trim().split(" ").join("%20");
   clearPage();
   url = `https://botw-compendium.herokuapp.com/api/v2/entry/${inputValue}`;
-  console.log(url);
   fetchData();
 }
+//this is a basic search function that formats the form input appropriately, then sets the URL, and calls the fetchData function.
 
 function getRandom() {
   clearPage();
@@ -90,6 +105,9 @@ function getRandom() {
   url = `https://botw-compendium.herokuapp.com/api/v2/entry/${random()}`;
   fetchData();
 }
+
+//this function specifically associates with the dice button, and will roll a random ID to get access to a random object from the API. like the search
+// it sets the url and calls fetchData()
 
 function fetchData() {
   fetch(url)
@@ -101,6 +119,8 @@ function fetchData() {
       console.error(err);
     });
 }
+
+//fetchData uses the assigned URL to fetch data from the API, then calls the populatePage function with the fetched object (data.data).
 
 function populatePage(data) {
   monsterEl.classList.toggle("hidden");
@@ -149,6 +169,9 @@ function populatePage(data) {
   }
 }
 
+//this is the meat and potatoes of the whole site. it is a very verbose way of manipulating the DOM with
+// the object that is fetched from the API.
+
 function clearPage() {
   const clearEls = document.querySelectorAll(".clear");
   const clearImgEls = document.querySelectorAll(".clearImg");
@@ -165,8 +188,13 @@ function clearPage() {
     document.querySelector(".drops").innerHTML = "";
   }
 }
+//clear page ensures that every object has a clean slate to work with; if, for example, an item doesn't
+// has an attack stat like the previous item, the attack icon will clear from the page.
 
 const isHidden = (elem) => {
   const styles = window.getComputedStyle(elem);
   return styles.display === "none" || styles.visibility === "hidden";
 };
+
+//a function to check if the "monster element" has the style of hidden applied. it will
+// not execute any of the page clears if the element is already hidden, meaning it is already emptied.
