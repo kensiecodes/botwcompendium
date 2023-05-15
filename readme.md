@@ -1,6 +1,8 @@
 # Hyrule Compendium
 
-This is an app for searching through the BoTW api by the same name by [gadhagod](https://github.com/gadhagod/Hyrule-Compendium-API). It's purpose is to be a simple user interface for accessing information on all in game items. The target user is a mobile user, picking up their phone to briefly search an item while playing the game.
+![App](https://pbs.twimg.com/media/FwMtAeWWICoU8ej?format=jpg&name=4096x4096)
+
+This is an app for searching through the BoTW api by [gadhagod](https://github.com/gadhagod/Hyrule-Compendium-API). It's purpose is to be a simple user interface for accessing information on all in game items. The target user is a mobile user, picking up their phone to briefly search an item while playing the game.
 Credits - [Hylia Serif](https://artsyomni.com/hyliaserif) - [BoTW API (Hyrule Compendium)](https://github.com/gadhagod/Hyrule-Compendium-API)
 
 [Vector Graphics](https://www.patreon.com/KraftHP)
