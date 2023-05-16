@@ -717,6 +717,10 @@ video {
   line-height: 1.75rem;
 }
 
+.not-italic {
+  font-style: normal;
+}
+
 .text-tan {
   --tw-text-opacity: 1;
   color: rgb(231 228 214 / var(--tw-text-opacity));
