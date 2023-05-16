@@ -9,6 +9,8 @@
 
 body {
   font-family: "Roboto", san-serif;
+  font-weight: 400;
+  font-style: italic;
 }
 
 html {
