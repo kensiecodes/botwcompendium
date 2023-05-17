@@ -7,14 +7,26 @@ Credits - [Hylia Serif](https://artsyomni.com/hyliaserif) - [BoTW API (Hyrule Co
 
 [Vector Graphics](https://www.patreon.com/KraftHP)
 
+## Contributions
+
+Contributions are welcome on this project. If you have any feature ideas, feel free to pitch them to me on [Twitter](https://twitter.com/MackensieJack). If you do contribute, please document your changes and comment around your code so it is as newbie friendly as possible! I would love for this to be someone's first open source contribution.
+
+## Technologies
+
+Currently, this project is very barebones. I used Tailwind for the styling, but everything else was done manually due to it's simplicity.
+
+![image](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![image](https://img.shields.io/badge/npm-CB3837?style=for-the-badge&logo=npm&logoColor=white)
+
 ## Roadmap
 
 - ~~Multi-device responsiveness~~
 - Implement error page
 - Click out of autocomplete window?
 - Search on enter key
+- Known bug on iOS Safari where the #suggestion box doesn't display when the suggestion array populates
 
-## Merge History
+## Merge notes
 
 ### Initial commit (Feb 18, 2023)
 
