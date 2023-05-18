@@ -38,7 +38,8 @@
 
           <div class="search--bar m-auto">
             
-            <form autocomplete="off">
+ <!-- Added onSubmit property and set it to false to prevent the window from refreshing when you press the enter key to submit form -->
+            <form autocomplete="off" onSubmit="return false;">
               
               <input type="text" id="search-input" />
 
