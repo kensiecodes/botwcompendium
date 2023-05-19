@@ -62,6 +62,13 @@ suggestionEl.addEventListener("click", (event) => {
   }
 });
 
+// ***** Add function to close autocomplete suggestions list when you click outside of the autocomplete window *****
+document.addEventListener("click", (clearSuggestions))
+
+function clearSuggestions() {
+  suggestionEl.textContent = "";
+}
+
 //inputEl and suggestionEl combine to make an autocomplete search feature.
 
 //inputEl accepts the input value in the form and filters the names array for a matching name,
@@ -76,7 +83,7 @@ suggestionEl.addEventListener("click", (event) => {
 inputEl.addEventListener('keyup', event => {
   console.log('working')
   if (event.code === 'Enter') {
-    const inputValue = inputEl.value.trim().split(' ').join('%20');
+    search()
     console.log(inputValue)
     if (inputValue.length > 0) {
       url = `https://botw-compendium.herokuapp.com/api/v2/entry/${inputValue}`
@@ -84,9 +91,6 @@ inputEl.addEventListener('keyup', event => {
     }
   }
 });
-
-
-//this event listener above is meant to read for the enter key, but still needs debugging.
 
 document.querySelector("#search-button").addEventListener("click", search);
 document.querySelector("#random-button").addEventListener("click", getRandom);
