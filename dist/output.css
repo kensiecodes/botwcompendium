@@ -556,6 +556,10 @@ video {
   }
 }
 
+.pointer-events-auto {
+  pointer-events: auto;
+}
+
 .float-left {
   float: left;
 }
@@ -599,6 +603,10 @@ video {
 
 .w-auto {
   width: auto;
+}
+
+.cursor-pointer {
+  cursor: pointer;
 }
 
 .flex-col {
@@ -719,6 +727,11 @@ video {
 
 .not-italic {
   font-style: normal;
+}
+
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 .text-tan {
