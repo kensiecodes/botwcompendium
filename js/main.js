@@ -62,6 +62,13 @@ suggestionEl.addEventListener("click", (event) => {
   }
 });
 
+// ***** Add function to close autocomplete suggestions list when you click outside of the autocomplete window *****
+document.addEventListener("click", (clearSuggestions))
+
+function clearSuggestions() {
+  suggestionEl.textContent = "";
+}
+
 //inputEl and suggestionEl combine to make an autocomplete search feature.
 
 //inputEl accepts the input value in the form and filters the names array for a matching name,
@@ -84,7 +91,6 @@ inputEl.addEventListener('keyup', event => {
     }
   }
 });
-
 
 //this event listener above is meant to read for the enter key, but still needs debugging.
 
