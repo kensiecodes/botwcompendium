@@ -71,17 +71,20 @@ suggestionEl.addEventListener("click", (event) => {
 //suggestionEl is a listener on the list items that populate in the suggestion box. if a list item is clicked,
 //the input autofills with the selected name.
 
-// inputEl.addEventListener('keyup', event => {
-//   console.log('working')
-//   if (event.code === 'Enter') {
-//     const inputValue = inputEl.value.trim().split(' ').join('%20');
-//     console.log(inputValue)
-//     if (inputValue.length > 0) {
-//       url = `https://botw-compendium.herokuapp.com/api/v2/entry/${inputValue}`
-//       fetchData()
-//     }
-//   }
-// });
+
+//******** BUG FIX - I disabled the form element from submitting on Enter in the index.html, originally it would refresh the page *********
+inputEl.addEventListener('keyup', event => {
+  console.log('working')
+  if (event.code === 'Enter') {
+    const inputValue = inputEl.value.trim().split(' ').join('%20');
+    console.log(inputValue)
+    if (inputValue.length > 0) {
+      url = `https://botw-compendium.herokuapp.com/api/v2/entry/${inputValue}`
+      fetchData()
+    }
+  }
+});
+
 
 //this event listener above is meant to read for the enter key, but still needs debugging.
 
