@@ -95,8 +95,13 @@ inputEl.addEventListener('keyup', event => {
 document.querySelector("#search-button").addEventListener("click", search);
 document.querySelector("#random-button").addEventListener("click", getRandom);
 document.querySelector(".title--text").addEventListener("click", clearPage);
+var errorElement = document.getElementById("error");
 
 function search() {
+  if (!inputEl.value) {
+    errorElement.textContent = "Please enter a search term.";
+    return;    
+  }
   const inputValue = inputEl.value.trim().split(" ").join("%20");
   clearPage();
   url = `https://botw-compendium.herokuapp.com/api/v2/entry/${inputValue}`;
@@ -180,6 +185,8 @@ function populatePage(data) {
 // the object that is fetched from the API.
 
 function clearPage() {
+  inputEl.value = "";
+  errorElement.textContent = "";
   const clearEls = document.querySelectorAll(".clear");
   const clearImgEls = document.querySelectorAll(".clearImg");
   console.log(clearImgEls);
