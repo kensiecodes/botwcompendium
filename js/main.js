@@ -44,7 +44,7 @@ const suggestionEl = document.querySelector("#suggestion");
 inputEl.addEventListener("input", () => {
   const inputValue = inputEl.value.trim();
   if (inputValue.length > 0) {
-    const matchingNames = names.filter((name) => name.includes(inputValue));
+    const matchingNames = names.filter((name) => name.includes(inputValue.toLowerCase()));
     const suggestionHtml = matchingNames
       .map((name) => `<li>${name}</li>`)
       .join("");
